@@ -1,0 +1,9 @@
+c:\users\akimh\documents\visual studio 2015\Projects\SandboxApp\WHAutomation_v1\bin\Debug\WHAutomation_v1.exe.config
+c:\users\akimh\documents\visual studio 2015\Projects\SandboxApp\WHAutomation_v1\bin\Debug\WHAutomation_v1.exe
+c:\users\akimh\documents\visual studio 2015\Projects\SandboxApp\WHAutomation_v1\bin\Debug\WHAutomation_v1.pdb
+c:\users\akimh\documents\visual studio 2015\Projects\SandboxApp\WHAutomation_v1\obj\Debug\WHAutomation_v1.csprojResolveAssemblyReference.cache
+c:\users\akimh\documents\visual studio 2015\Projects\SandboxApp\WHAutomation_v1\obj\Debug\WHAutomation_v1.exe
+c:\users\akimh\documents\visual studio 2015\Projects\SandboxApp\WHAutomation_v1\obj\Debug\WHAutomation_v1.pdb
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomation_v1\bin\Debug\WHAutomation_v1.exe.config
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomation_v1\obj\Debug\WHAutomation_v1.exe
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomation_v1\obj\Debug\WHAutomation_v1.pdb
