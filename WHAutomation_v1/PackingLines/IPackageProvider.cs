@@ -2,6 +2,6 @@
 {
     public interface IPackageProvider
     {
-        IPackage GetPackageFor(ProductSize productSize);
+        IPackage<ProductSize> GetPackageFor(ProductSize productSize);
     }
 }

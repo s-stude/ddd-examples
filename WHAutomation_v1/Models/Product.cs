@@ -1,19 +1,34 @@
 ﻿namespace WHAutomation_v1
 {
-    public class Product : IProduct
+    public class Product
     {
-        public Product(string name, ProductSize productSize)
-        {
-            Name = name;
-            ProductSize = productSize;
-        }
-
         public string Name { get; }
-        public ProductSize ProductSize { get; }
+    }
 
-        public override string ToString()
+    public class LiquidProduct : Product, IProduct<LiquidProductSize>
+    {
+        public LiquidProduct(string name, IBasicSize<LiquidProductSize> productSize)
         {
-            return $"Name: {Name}, ProductSize: {ProductSize}";
         }
+
+        public IBasicSize<LiquidProductSize> ProductSize { get; }
+    }
+
+    public class PieceProduct : Product, IProduct<PieceProductSize>
+    {
+        public PieceProduct(string name, IBasicSize<PieceProductSize> productSize)
+        {
+        }
+
+        public IBasicSize<PieceProductSize> ProductSize { get; }
+    }
+
+    public class ThreeDProduct : Product, IProduct<ThreeDProductSize>
+    {
+        public ThreeDProduct(string name, IBasicSize<ThreeDProductSize> productSize)
+        {
+        }
+
+        public IBasicSize<ThreeDProductSize> ProductSize { get; }
     }
 }

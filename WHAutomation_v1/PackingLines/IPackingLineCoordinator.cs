@@ -2,6 +2,6 @@
 {
     public interface IPackingLineCoordinator
     {
-        IPackingLine GetPackingLineBy(IProduct product);
+        IPackingLine GetPackingLineBy(Product product);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace WHAutomation_v1
 {
@@ -7,9 +8,9 @@ namespace WHAutomation_v1
     {
         private static void Main(string[] args)
         {
-            var milk = new Product("Milk", new ProductSize(0.5, UnitOfMeasure.Liter));
-            var bread = new Product("Bread", new ProductSize(1, UnitOfMeasure.Piece));
-            var pasta = new Product("Ravioli", new ProductSize(0.25, UnitOfMeasure.Kilo));
+            var milk = new LiquidProduct("Milk", new LiquidsSize(UnitOfMeasure.Liter, 0.5));
+            var bread = new PieceProduct("Bread", new PieceSize(UnitOfMeasure.Piece));
+            var pasta = new ThreeDProduct("Ravioli", new ThreeDSize(UnitOfMeasure.Kilo, 100, 200, 300));
 
             var items = new List<Product> { milk, bread, pasta };
 
@@ -26,6 +27,10 @@ namespace WHAutomation_v1
             }
 
             Console.Read();
+
+            
+
         }
     }
+
 }

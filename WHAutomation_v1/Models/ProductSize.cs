@@ -1,19 +1,48 @@
-﻿namespace WHAutomation_v1
+﻿using System.Threading;
+
+namespace WHAutomation_v1
 {
-    public class ProductSize
+    public abstract class ProductSize
     {
-        public ProductSize(double amount, UnitOfMeasure unitOfMeasure)
+        public UnitOfMeasure UnitOfMeasure { get; protected set; }
+    }
+
+    public class PieceProductSize : ProductSize
+    {
+        public PieceProductSize(UnitOfMeasure unitOfMeasure)
         {
-            Amount = amount;
+            Count = 1;
+        }
+
+        public int Count { get; set; }
+    }
+
+    public class LiquidProductSize : ProductSize
+    {
+        public LiquidProductSize(double volume, UnitOfMeasure unitOfMeasure)
+        {
+            UnitOfMeasure = unitOfMeasure;
+            Volume = volume;
+        }
+
+        public double Volume { get; }
+    }
+
+    public class ThreeDProductSize : ProductSize
+    {
+        public ThreeDProductSize(double weight, int width, int length, int height, UnitOfMeasure unitOfMeasure)
+        {
+            Weight = weight;
+            Width = width;
+            Length = length;
+            Height = height;
             UnitOfMeasure = unitOfMeasure;
         }
 
-        public double Amount { get; }
-        public UnitOfMeasure UnitOfMeasure { get; }
+        public double Weight { get; set; }
 
-        public override string ToString()
-        {
-            return $"Amount: {Amount}, UnitOfMeasure: {UnitOfMeasure}";
-        }
+        public int Width { get; set; }
+        public int Length { get; set; }
+        public int Height { get; set; }
     }
 }

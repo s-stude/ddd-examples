@@ -1,8 +1,8 @@
 ﻿namespace WHAutomation_v1
 {
-    public interface IPackage
+    public interface IPackage<T>
     {
         string Manufacturer { get; }
-        PackageSize PackageSize { get; }
+        bool FitProduct(T product);
     }
 }

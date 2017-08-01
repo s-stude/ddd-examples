@@ -14,6 +14,7 @@ namespace WHAutomation_v1
         public IPackedProduct Pack(IProduct product)
         {
             var package = _packageProvider.GetPackageFor(product.ProductSize);
+            package.PackageSize.FitProduct(product);
 
             return new PackedProduct(product, package, DateTime.Now, this.GetType().FullName);
         }

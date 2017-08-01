@@ -1,0 +1,6 @@
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomations_v2\bin\Debug\WHAutomations_v2.exe.config
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomations_v2\bin\Debug\WHAutomations_v2.exe
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomations_v2\bin\Debug\WHAutomations_v2.pdb
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomations_v2\obj\Debug\WHAutomations_v2.exe
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomations_v2\obj\Debug\WHAutomations_v2.pdb
+C:\Users\akimh\Documents\git\SandboxApp\WHAutomations_v2\obj\Debug\WHAutomations_v2.csprojResolveAssemblyReference.cache

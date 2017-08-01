@@ -1,19 +1,47 @@
 ﻿namespace WHAutomation_v1
 {
-    public class Package : IPackage
+    public abstract class Package<T>
     {
         public string Manufacturer { get; }
-        public PackageSize PackageSize { get; }
+    }
 
-        public Package(string manufacturer, PackageSize packageSize)
+    public class PiecePackage : Package<ProductSize>, IPackage<PieceProductSize>
+    {
+        public PiecePackage(string manufacturer, IBasicSize<PieceProductSize> size)
         {
-            Manufacturer = manufacturer;
-            PackageSize = packageSize;
+            
         }
-
-        public override string ToString()
+        public bool FitProduct(PieceProductSize product)
         {
-            return $"Manufacturer: {Manufacturer}, PackageSize: {PackageSize}";
+            throw new System.NotImplementedException();
         }
     }
+
+    public class LiquidsPackage : Package, IPackage<LiquidProductSize>
+    {
+        public LiquidsPackage(string manufacturer, IBasicSize<LiquidProductSize> size)
+        {
+
+        }
+
+        public bool FitProduct(LiquidProductSize product)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+    public class ThreeDPackage : Package, IPackage<ThreeDProductSize>
+    {
+        public ThreeDPackage(string manufacturer, IBasicSize<ThreeDProductSize> size)
+        {
+
+        }
+
+        public bool FitProduct(ThreeDProductSize product)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+
+
 }

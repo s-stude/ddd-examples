@@ -54,7 +54,7 @@
     <Compile Include="PackingLines\Implementation\LiquidsPackingLine.cs" />
     <Compile Include="Models\Package.cs" />
     <Compile Include="PackingLines\PackageProvider.cs" />
-    <Compile Include="Models\PackageSize.cs" />
+    <Compile Include="Models\IBasicSize.cs" />
     <Compile Include="Models\PackedProduct.cs" />
     <Compile Include="PackingLines\PackingLineCoordinator.cs" />
     <Compile Include="PackingLines\Implementation\PiecePackingLine.cs" />

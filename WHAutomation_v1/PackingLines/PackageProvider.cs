@@ -6,21 +6,21 @@ namespace WHAutomation_v1
 {
     public class PackageProvider : IPackageProvider
     {
-        private readonly IEnumerable<IPackage> _packages;
+        private readonly IEnumerable<Package<ProductSize>> _packages;
 
         public PackageProvider()
         {
-            _packages = new List<IPackage>();
+            _packages = new List<Package<ProductSize>>();
         }
 
-        public PackageProvider(IEnumerable<IPackage> packages) : this()
+        public PackageProvider(IEnumerable<Package<ProductSize>> packages) : this()
         {
             _packages = packages;
         }
 
-        public IPackage GetPackageFor(ProductSize productSize)
+        public IPackage<ProductSize> GetPackageFor(ProductSize productSize)
         {
-            IEnumerable<IPackage> availablePackages = GetPacksFor(productSize.UnitOfMeasure).ToList();
+            IEnumerable<Package<ProductSize>> availablePackages = GetPacksFor(productSize).ToList();
 
             if (availablePackages.Any() == false)
             {
@@ -28,19 +28,16 @@ namespace WHAutomation_v1
                     productSize.UnitOfMeasure));
             }
 
-            var pack = availablePackages
-                .Where(p => Math.Abs(p.PackageSize.Volume - productSize.Amount) < 0.05) // TODO: Fix this
-                .OrderBy(p => p.PackageSize.Volume)
-                .FirstOrDefault();
+            var pack = availablePackages.FirstOrDefault(p => p.FitProductSize(productSize));
 
             if(pack == null)throw new InvalidOperationException(string.Format("Pack not found for {0}", productSize.UnitOfMeasure));
 
             return pack;
         }
 
-        private IEnumerable<IPackage> GetPacksFor(UnitOfMeasure unitOfMeasure)
+        private IEnumerable<Package<ProductSize>> GetPacksFor(ProductSize productSize)
         {
-            return _packages.Where(p => p.PackageSize.UnitOfMeasure == unitOfMeasure);
+            return _packages.Where(p => p.PackageSize.UnitOfMeasure == productSize);
         }
     }
 }
